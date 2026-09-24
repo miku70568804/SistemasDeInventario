@@ -17,4 +17,8 @@ public class ProductoService {
     public List<Producto> listar() {
         return repository.findAll();
     }
+
+    public Producto guardar(Producto producto) {
+        return repository.save(producto);
+    }
 }
