@@ -21,4 +21,12 @@ public class ProductoService {
     public Producto guardar(Producto producto) {
         return repository.save(producto);
     }
+
+    public Producto buscarPorId(Long id) {
+        return repository.findById(id).orElse(null);
+    }
+
+    public void eliminar(Long id) {
+        repository.deleteById(id);
+    }
 }
