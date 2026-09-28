@@ -29,4 +29,19 @@ public class ProductoService {
     public void eliminar(Long id) {
         repository.deleteById(id);
     }
+
+    public Producto actualizar(Long id, Producto producto) {
+
+        Producto existente = repository.findById(id).orElse(null);
+
+        if (existente != null) {
+            existente.setNombre(producto.getNombre());
+            existente.setDescripcion(producto.getDescripcion());
+            existente.setStock(producto.getStock());
+
+            return repository.save(existente);
+        }
+
+        return null;
+    }
 }

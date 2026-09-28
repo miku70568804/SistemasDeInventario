@@ -17,4 +17,5 @@ public class ProveedorService {
     public List<Proveedor> listar() {
         return repository.findAll();
     }
+    
 }
